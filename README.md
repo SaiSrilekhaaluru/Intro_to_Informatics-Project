@@ -1,4 +1,4 @@
-World Important Events – Ancient to Modern
+## World Important Events – Ancient to Modern
 
 Data exploration, sentiment analysis, and predictive modeling on historical events dataset
 
