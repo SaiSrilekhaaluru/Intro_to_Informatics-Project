@@ -1,14 +1,14 @@
-🌍 World Important Events – Ancient to Modern
+World Important Events – Ancient to Modern
 
 A data-driven exploration of global historical events with sentiment analysis and predictive modeling
 
-📌 Introduction
+Introduction
 
 This project investigates a curated dataset of world historical events, spanning from ancient civilizations to the modern era. It applies data exploration, visualization, sentiment analysis, and predictive modeling techniques to uncover patterns and insights.
 
 The objective is to demonstrate how informatics and data science can transform descriptive, text-rich datasets into meaningful analyses, highlighting historical trends and their broader implications.
 
-📂 Dataset
+Dataset
 
 The dataset, sourced from Kaggle, includes structured information about significant world events with attributes such as:
 
@@ -22,7 +22,7 @@ Text Description – narrative details of the event
 
 Additional metadata for categorization and analysis
 
-⚙️ Project Workflow
+Project Workflow
 
 Data Preprocessing
 
@@ -50,7 +50,7 @@ Built baseline machine learning models (Logistic Regression, Decision Tree, Rand
 
 Evaluated predictive capacity using accuracy and performance metrics
 
-📈 Results
+Results
 
 Highlighted the most eventful countries and centuries throughout history
 
@@ -62,7 +62,7 @@ Applied sentiment analysis to assess polarity of event narratives
 
 Conducted preliminary predictive modeling for classification tasks
 
-🚀 Future Work
+Future Work
 
 Replace placeholder outcomes with authentic classification labels such as event severity or type
 
@@ -72,7 +72,7 @@ Apply advanced natural language processing (NLP) techniques, including topic mod
 
 Integrate geospatial visualizations to map events across regions and eras
 
-👩‍💻 Author
+Author
 
 Sai Srilekha Aluru
 Master’s Student – Health Informatics | Pharm D
