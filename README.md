@@ -1,150 +1,81 @@
-## World Important Events – Ancient to Modern
+🌍 World Important Events – Ancient to Modern
 
-Data exploration, sentiment analysis, and predictive modeling on historical events dataset
+A data-driven exploration of global historical events with sentiment analysis and predictive modeling
 
-1. Overview
+📌 Introduction
 
-This project analyzes a dataset of world important events across history. The workflow includes:
+This project investigates a curated dataset of world historical events, spanning from ancient civilizations to the modern era. It applies data exploration, visualization, sentiment analysis, and predictive modeling techniques to uncover patterns and insights.
 
-Data exploration & preprocessing
+The objective is to demonstrate how informatics and data science can transform descriptive, text-rich datasets into meaningful analyses, highlighting historical trends and their broader implications.
 
-Visualization of trends (countries, populations, event descriptions)
+📂 Dataset
 
-Sentiment analysis using VADER
+The dataset, sourced from Kaggle, includes structured information about significant world events with attributes such as:
 
-Calculation of an Impact Score (affected vs. total population)
+Country – geographical location of the event
 
-Predictive modeling with multiple ML algorithms
+Affected Population – number of individuals impacted
 
-The aim is to demonstrate how informatics methods can be applied to large, descriptive datasets for insights and predictive analytics.
+Total Population – reference population size
 
-2. Dataset
+Text Description – narrative details of the event
 
-The dataset (Project_data.xlsx) contains:
+Additional metadata for categorization and analysis
 
-Country – location of the event
+⚙️ Project Workflow
 
-Affected_Population – count of affected individuals
+Data Preprocessing
 
-Total_Population – reference population
+Standardized numeric and categorical fields
 
-Text_description – narrative of the event
+Derived new features such as Impact Score, Century, and Era
 
-Additional fields related to event impact
+Exploratory Data Analysis (EDA)
 
-3. Project Files
+Frequency of events across countries and categories
 
-Intro_Informatics_Project.ipynb – main Jupyter Notebook with full workflow
+Identification of historically active regions and time periods
 
-Project_data.xlsx – input dataset
+Visualization of narratives using word clouds
 
-wordcloud.png – generated word cloud of event descriptions
+Feature Engineering
 
-impact_score_plot.png – log-log regression of population vs. affected
+Computed an Impact Score to quantify event magnitude
 
-evaluation_results.json – ML performance metrics
+Applied sentiment analysis to text descriptions
 
-README.md – project documentation
+Predictive Modeling
 
-4. Requirements
+Built baseline machine learning models (Logistic Regression, Decision Tree, Random Forest, SVM)
 
-Install dependencies with:
+Evaluated predictive capacity using accuracy and performance metrics
 
-pip install pandas numpy matplotlib seaborn scikit-learn nltk wordcloud
+📈 Results
 
+Highlighted the most eventful countries and centuries throughout history
 
-Also download the VADER lexicon for sentiment analysis:
+Generated a word cloud emphasizing frequent historical terms and themes
 
-import nltk
-nltk.download('vader_lexicon')
+Developed an Impact Score to represent the proportional effect of events
 
-5. Usage
-A) Load and Inspect Dataset
-import pandas as pd
+Applied sentiment analysis to assess polarity of event narratives
 
-df = pd.read_excel("Project_data.xlsx")
-print(df.head())
-df.info()
+Conducted preliminary predictive modeling for classification tasks
 
-B) Explore Distributions
-# Top 20 countries by number of events
-import seaborn as sns
-import matplotlib.pyplot as plt
+🚀 Future Work
 
-country_counts = df['Country'].value_counts().nlargest(20)
-plt.figure(figsize=(10,6))
-sns.barplot(x=country_counts.values, y=country_counts.index)
-plt.title("Top 20 Countries by Number of Events")
-plt.show()
+Replace placeholder outcomes with authentic classification labels such as event severity or type
 
-C) Word Cloud of Event Descriptions
-from wordcloud import WordCloud
+Enhance analysis with interactive dashboards in Tableau, Power BI, or Plotly
 
-text = " ".join(str(desc) for desc in df["Text_description"])
-wordcloud = WordCloud(background_color="white").generate(text)
+Apply advanced natural language processing (NLP) techniques, including topic modeling and transformer-based models
 
-plt.figure(figsize=(12,6))
-plt.imshow(wordcloud, interpolation="bilinear")
-plt.axis("off")
-plt.title("Word Cloud for Event Descriptions")
-plt.show()
+Integrate geospatial visualizations to map events across regions and eras
 
-D) Impact Score & Sentiment
-import numpy as np
-from nltk.sentiment import SentimentIntensityAnalyzer
-
-df["Population_Affected"] = pd.to_numeric(df["Population_Affected"], errors="coerce")
-df["Total_Population"] = pd.to_numeric(df["Total_Population"], errors="coerce")
-
-# Impact score
-df["Impact Score"] = (df["Population_Affected"] / df["Total_Population"]) * 100
-
-# Sentiment analysis
-sia = SentimentIntensityAnalyzer()
-df["Sentiment"] = df["Text_description"].astype(str).apply(lambda x: sia.polarity_scores(x)["compound"])
-
-E) Predictive Modeling
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score
-
-# Dummy outcome for demonstration
-df["Outcome"] = np.random.choice([0,1], size=len(df))
-X = df[["Impact Score", "Sentiment"]]
-y = df["Outcome"]
-
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-model = LogisticRegression()
-model.fit(X_train, y_train)
-
-preds = model.predict(X_test)
-print("Accuracy:", accuracy_score(y_test, preds))
-
-6. Results
-
-Exploration: Identified top countries & populations most represented in the dataset
-
-Word Cloud: Highlighted frequent terms in historical descriptions
-
-Impact Score: Quantified population-level effect of events
-
-Sentiment Analysis: Assigned polarity values to event narratives
-
-Predictive Models: Logistic Regression, SVM, Decision Tree, Random Forest tested for classification tasks
-
-7. Future Work
-
-Use real historical labels instead of dummy outcomes for classification
-
-Expand visualizations with interactive dashboards (Plotly, Power BI, Tableau)
-
-Apply advanced NLP (topic modeling, transformers) for event classification
-
-8. Author
+👩‍💻 Author
 
 Sai Srilekha Aluru
-MS Health Informatics | Pharm D
+Master’s Student – Health Informatics | Pharm D
 📧 saisrilekhaaluru@gmail.com
 
 🔗 LinkedIn
