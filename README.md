@@ -78,4 +78,4 @@ Sai Srilekha Aluru
 Master’s Student – Health Informatics | Pharm D
 📧 saisrilekhaaluru@gmail.com
 
-🔗 LinkedIn
+🔗 [LinkedIn](https://www.linkedin.com/in/sai-srilekha-aluru-60b156177/)
